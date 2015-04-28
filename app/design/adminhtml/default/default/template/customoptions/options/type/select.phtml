@@ -1,0 +1,37 @@
+<?php /* @var $this Mage_Catalog_Block_Product_View_Options_Type_Select */ ?>
+<?php $_option = $this->getOption() ?>
+<?php $this->setSkipJsReloadPrice(1); ?>
+<dt><label<?php if ($_option->getIsRequire()) echo ' class="required"' ?>><?php if ($_option->getIsRequire()) echo '<em>*</em>' ?><?php echo  $this->escapeHtml($_option->getTitle()) ?></label></dt>
+<dd<?php if ($_option->decoratedIsLast){?> class="last"<?php }?>>
+    <div class="input-box">
+        <?php echo $this->getValuesHtml() ?>
+        <?php if ($_option->getIsRequire()): ?>
+            <?php if ($_option->getType() == Mage_Catalog_Model_Product_Option::OPTION_TYPE_RADIO || $_option->getType() == Mage_Catalog_Model_Product_Option::OPTION_TYPE_CHECKBOX): ?>
+                <span id="options-<?php echo $_option->getId() ?>-container"></span>
+            <?php endif; ?>
+        <?php endif;?>
+    </div>
+</dd>
+<script type="text/javascript">
+    //<![CDATA[
+        var items = $$('input[id^=options_<?php echo $_option->getId() ?>_].checkbox', 'input[id^=options_<?php echo $_option->getId() ?>_].radio');
+
+        if (items.length > 0) {
+            items.each(function(item) {
+                if (parseFloat(item.getAttribute('price'))) {
+                    item.disable();
+                }
+            });
+        }
+
+        if ($('select_<?php echo $_option->getId() ?>')) {
+            var selectItem = $('select_<?php echo $_option->getId() ?>');
+            var optionItems = selectItem.select('option');
+            optionItems.each(function(item) {
+                if (parseFloat(item.getAttribute('price')) > 0) {
+                    selectItem.disable();
+                }
+            });
+        }
+    //]]>
+</script>

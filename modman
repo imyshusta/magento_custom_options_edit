@@ -1,0 +1,13 @@
+app/code/local/Session/CustomOptions/Helper/Data.php						app/code/local/Session/CustomOptions/Helper/Data.php
+app/code/local/Session/CustomOptions/Model/Observer.php						app/code/local/Session/CustomOptions/Model/Observer.php
+app/code/local/Session/CustomOptions/controllers/Adminhtml/OptionsController.php		app/code/local/Session/CustomOptions/controllers/Adminhtml/OptionsController.php
+app/code/local/Session/CustomOptions/etc/config.xml						app/code/local/Session/CustomOptions/etc/config.xml
+app/design/adminhtml/default/default/layout/session_customoptions.xml				app/design/adminhtml/default/default/layout/session_customoptions.xml
+app/design/adminhtml/default/default/template/customoptions/options.phtml			app/design/adminhtml/default/default/template/customoptions/options.phtml
+app/design/adminhtml/default/default/template/customoptions/options/type/date.phtml		app/design/adminhtml/default/default/template/customoptions/options/type/date.phtml
+app/design/adminhtml/default/default/template/customoptions/options/type/default.phtml		app/design/adminhtml/default/default/template/customoptions/options/type/default.phtml
+app/design/adminhtml/default/default/template/customoptions/options/type/file.phtml		app/design/adminhtml/default/default/template/customoptions/options/type/file.phtml
+app/design/adminhtml/default/default/template/customoptions/options/type/select.phtml		app/design/adminhtml/default/default/template/customoptions/options/type/select.phtml
+app/design/adminhtml/default/default/template/customoptions/options/type/text.phtml		app/design/adminhtml/default/default/template/customoptions/options/type/text.phtml
+app/design/adminhtml/default/default/template/customoptions/popup.phtml				app/design/adminhtml/default/default/template/customoptions/popup.phtml
+app/etc/modules/Session_CustomOptions.xml							app/etc/modules/Session_CustomOptions.xml

@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_sales_order_view>
+        <reference name="content">
+            <block type="adminhtml/template"
+                   name="session.customoptions.adminhtml.popup" template="customoptions/popup.phtml">
+                <block type="catalog/product_view_options" name="session.customoptions.adminhtml.edit"
+                       as="session.customoptions.adminhtml.edit" template="customoptions/options.phtml">
+                    <action method="addOptionRenderer">
+                        <type>text</type>
+                        <block>catalog/product_view_options_type_text</block>
+                        <template>customoptions/options/type/text.phtml</template>
+                    </action>
+                    <action method="addOptionRenderer">
+                        <type>file</type>
+                        <block>catalog/product_view_options_type_file</block>
+                        <template>customoptions/options/type/file.phtml</template>
+                    </action>
+                    <action method="addOptionRenderer">
+                        <type>select</type>
+                        <block>catalog/product_view_options_type_select</block>
+                        <template>customoptions/options/type/select.phtml</template>
+                    </action>
+                    <action method="addOptionRenderer">
+                        <type>date</type>
+                        <block>catalog/product_view_options_type_date</block>
+                        <template>customoptions/options/type/date.phtml</template>
+                    </action>
+                </block>
+            </block>
+        </reference>
+        <reference name="head">
+            <action method="addItem">
+                <type>js_css</type>
+                <name>prototype/windows/themes/default.css</name>
+            </action>
+            <action method="addCss">
+                <name>lib/prototype/windows/themes/magento.css</name>
+            </action>
+            <action method="addJs"><script>varien/form.js</script></action>
+        </reference>
+    </adminhtml_sales_order_view>
+    <adminhtml_options_edit>
+        <block type="adminhtml/sales_order_view_items" name="order_items" template="sales/order/view/items.phtml">
+            <action method="addItemRender">
+                <type>default</type>
+                <block>adminhtml/sales_order_view_items_renderer_default</block>
+                <template>sales/order/view/items/renderer/default.phtml</template>
+            </action>
+            <action method="addColumnRender">
+                <column>qty</column>
+                <block>adminhtml/sales_items_column_qty</block>
+                <template>sales/items/column/qty.phtml</template>
+            </action>
+            <action method="addColumnRender">
+                <column>name</column>
+                <block>adminhtml/sales_items_column_name</block>
+                <template>sales/items/column/name.phtml</template>
+            </action>
+            <action method="addColumnRender">
+                <column>name</column>
+                <block>adminhtml/sales_items_column_name_grouped</block>
+                <template>sales/items/column/name.phtml</template>
+                <type>grouped</type>
+            </action>
+            <block type="core/text_list" name="order_item_extra_info"/>
+        </block>
+        <block type="catalog/product_view_options" name="session.customoptions.adminhtml.edit"
+               as="session.customoptions.adminhtml.edit" template="customoptions/options.phtml">
+            <action method="addOptionRenderer">
+                <type>text</type>
+                <block>catalog/product_view_options_type_text</block>
+                <template>customoptions/options/type/text.phtml</template>
+            </action>
+            <action method="addOptionRenderer">
+                <type>file</type>
+                <block>catalog/product_view_options_type_file</block>
+                <template>customoptions/options/type/file.phtml</template>
+            </action>
+            <action method="addOptionRenderer">
+                <type>select</type>
+                <block>catalog/product_view_options_type_select</block>
+                <template>customoptions/options/type/select.phtml</template>
+            </action>
+            <action method="addOptionRenderer">
+                <type>date</type>
+                <block>catalog/product_view_options_type_date</block>
+                <template>customoptions/options/type/date.phtml</template>
+            </action>
+        </block>
+    </adminhtml_options_edit>
+</layout>
